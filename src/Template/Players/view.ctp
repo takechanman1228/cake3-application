@@ -18,8 +18,12 @@
   </header>
 
   <main id="main">
-
-    <section class="mainInfo">
+    <!--あとでけしてください-->
+   <?= h($player->name) ?>
+   <?= $this->Number->format($player->id) ?>
+   <?= $this->Number->format($player->ouen) ?>
+   <!--ここまであとでけしてください -->
+   <section class="mainInfo">
      <div class="portrait"></div>
      <h2 class="name">選手名</h2>
      <p class="basic">
