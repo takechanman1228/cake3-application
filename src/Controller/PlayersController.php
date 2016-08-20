@@ -40,15 +40,23 @@ class PlayersController extends AppController
         $this->set('_serialize', ['player']);
     }
 
-     public function api($id = null)
+    public function api($id = null)
     {
-        $player = $this->Players->get($id, [
-            'contain' => ['Details']
-        ]);
+	    if($id =="0"){
 
-        $this->set('player', $player);
-        $this->set('_serialize', ['player']);
+		    $array=array("この間は誕生日おめでとうございます！by鈴木さん","頼りになる抑え！by高橋さん","田中さん本当にカッコいいです！by渡辺さん");
+	    } elseif ($id ==1){
+		    $array=array("〇〇さん、いつも頼りにしてます！ by中村さん","今日はでっかいの打ち上げてくれ by林さん","守備でも魅せるね～！ by山本さん");
+	    } elseif ($id ==2){
+		    $array=array("〇〇さん、いつも頼りにしてます！ by中村さん",
+				    "今日もホームランを見せてくれ！ by加藤さん",
+				    "三振とかいいからHRくれ by谷口さん");
+	    }
+            shuffle($array);
+            //$this->set('json', json_encode($shuffled, JSON_UNESCAPED_UNICODE));
+            $this->set('json', $array[0]);//流す文字列
     }
+
 
 
     /**
