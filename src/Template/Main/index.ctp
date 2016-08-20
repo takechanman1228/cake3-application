@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/common.css">
-</head>
 <body id="top">
 
   <header id="header">
@@ -16,129 +6,25 @@
 
   <main id="main">
 
-  <section class="currentGame">
-    <p class="">二回 ウラ</p>
-  </section>
+  <?php foreach ($players as $player) : ?>
 
-  <a href="detail.html">
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <div class="cheer like">90</div>
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="active player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-        <p>今バッターボックスにいます！</p>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-    <section class="player cf">
-      <div class="portrait">
-        <p class="backnumber">19</p>
-      </div>
-      <div class="info">
-        <h2 class="name">田中太郎</h2>
-        <div class="role"><p>ピッチャー</p></div>
-      </div>
-      <img src="img/thumb-up-sign.svg" width="25" alt="" class="like">
-    </section>
-
-  </a>
-
-
+    <a href="detail/<?= h($player->id); ?>">
+      <section class="player cf" id="p<?= h($player->id); ?>">
+        <div class="portrait">
+          <p class="backnumber"><?= h($player->uniform); ?></p>
+        </div>
+        <div class="info">
+          <h2 class="name"><?= h($player->name); ?></h2>
+          <div class="role"><p><?= h($player->role); ?></p></div>
+          <p class="comment"></p>
+        </div>
+        <div class="cheer like"><?= h($player->ouen); ?></div>
+      </section>
+    </a>
+  <?php endforeach; ?>
 
 
   </main>
 
 </body>
-</html>
+
