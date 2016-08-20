@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Comments Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $Players
  *
  * @method \App\Model\Entity\Comment get($primaryKey, $options = [])
  * @method \App\Model\Entity\Comment newEntity($data = null, array $options = [])
@@ -43,6 +44,9 @@ class CommentsTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id'
         ]);
+        $this->belongsTo('Players', [
+            'foreignKey' => 'player_id'
+        ]);
     }
 
     /**
@@ -73,6 +77,7 @@ class CommentsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;
     }

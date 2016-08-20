@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/common.css">
+
+<style type="text/css">
+.message {
+  text-align: center;
+  padding: 5px;
+  color: black;
+  background: Lavender;
+}
+
+.hidden {
+  display: none;
+}
+</style>
 </head>
 <body id="send">
 
@@ -18,7 +31,7 @@
   </header>
 
   <main id="main">
-
+    <?= $this->Flash->render() ?>
     <section class="sendInfo">
 
       <div class="sendInfoBox cf">
@@ -46,6 +59,7 @@
 
       <form method="post" accept-charset="utf-8" action="/studev-takeda/message/1">
         <div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>
+        <div style="display:none;"><input type="hidden" name="player_id" value=$player_id/></div>
         <div class="input textarea">
         <textarea name="comment" id="comment" rows="5"></textarea></div>
         <button type="submit" class="sendBtn" name="name">提出</button>

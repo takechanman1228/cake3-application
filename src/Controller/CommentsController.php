@@ -19,7 +19,7 @@ class CommentsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Players']
         ];
         $comments = $this->paginate($this->Comments);
 
@@ -37,7 +37,7 @@ class CommentsController extends AppController
     public function view($id = null)
     {
         $comment = $this->Comments->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Players']
         ]);
 
         $this->set('comment', $comment);
@@ -55,26 +55,26 @@ class CommentsController extends AppController
         if ($this->request->is('post')) {
             $comment = $this->Comments->patchEntity($comment, $this->request->data);
             if ($this->Comments->save($comment)) {
-                $this->Flash->success(__('The comment has been saved.'));
-
-                return $this->redirect(['Controller' => 'Players', 'action' => 'index']);
+                $this->Flash->success(__('投稿に成功しました'));
+                return $this->redirect([]);
+                //return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             }
         }
         $users = $this->Comments->Users->find('list', ['limit' => 200]);
-        $this->set(compact('comment', 'users'));
+        $players = $this->Comments->Players->find('list', ['limit' => 200]);
+        $this->set(compact('comment', 'users', 'players'));
         $this->set('_serialize', ['comment']);
+
         if ($id != null) {
-        $player = $this->Players->get($id, [
+        /*$player = $this->Players->get($id, [
           'contain' => ['Details']
         ]);
-        $this->set('player', $player);
-        $this->set('id', $id);
-        $this->set('_serialize', ['player']);
+        $this->set('player', $player);*/
+        $this->set('player_id', $id);
+        $this->set('_serialize', ['player_id']);
         }
-
-
     }
 
     /**
@@ -100,7 +100,8 @@ class CommentsController extends AppController
             }
         }
         $users = $this->Comments->Users->find('list', ['limit' => 200]);
-        $this->set(compact('comment', 'users'));
+        $players = $this->Comments->Players->find('list', ['limit' => 200]);
+        $this->set(compact('comment', 'users', 'players'));
         $this->set('_serialize', ['comment']);
     }
 

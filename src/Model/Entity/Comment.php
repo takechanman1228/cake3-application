@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $user_id
+ * @property int $player_id
  * @property string $comment
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
