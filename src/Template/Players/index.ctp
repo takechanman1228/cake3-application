@@ -6,11 +6,11 @@
 
   <main id="main">
 
-  <?php foreach ($players as $player) : ?>
+  <?php foreach ($players as $player) : $id = $player->id; ?>
 
     <a href="detail/<?= h($player->id); ?>">
       <section class="player cf" id="p<?= h($player->id); ?>">
-        <div class="portrait">
+        <div class="portrait" style="background-image:url(<?= $this->Url->build('/') ?>img/player/<?php echo $id; ?>/1.png)">
           <p class="backnumber"><?= h($player->uniform); ?></p>
         </div>
         <div class="info">
@@ -18,7 +18,11 @@
           <div class="role"><p><?= h($player->role); ?></p></div>
           <p class="comment"></p>
         </div>
-        <div class="cheer like"><?= h($player->ouen); ?></div>
+        <div class="cheer like">
+          <?= $this->Html->image('cheer.svg', ['width'=>20,'alt' => 'CakePHP']); ?><br>
+          <span><?= h($player->ouen); ?></span>
+
+        </div>
       </section>
     </a>
   <?php endforeach; ?>
