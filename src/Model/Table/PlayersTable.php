@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Players Model
  *
+ * @property \Cake\ORM\Association\HasMany $Comments
  * @property \Cake\ORM\Association\HasMany $Details
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
@@ -40,6 +41,9 @@ class PlayersTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->hasMany('Comments', [
+            'foreignKey' => 'player_id'
+        ]);
         $this->hasMany('Details', [
             'foreignKey' => 'player_id'
         ]);
