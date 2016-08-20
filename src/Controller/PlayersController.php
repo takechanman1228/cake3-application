@@ -19,8 +19,7 @@ class PlayersController extends AppController
     public function index()
     {
         $players = $this->paginate($this->Players);
-
-        $this->set(compact('players'));
+        $this->set('players', $this->Players->find('all'));
         $this->set('_serialize', ['players']);
     }
 

@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body id="top">
-
   <header id="header">
     <h2>2回裏</h2>
   </header>
@@ -19,8 +18,13 @@
   <section class="currentGame">
     <p class="">二回 ウラ</p>
   </section>
-
-  <a href="detail.html">
+<ul>
+  <?php foreach ($players as $player) : ?>
+    <li><?= h($player->name); ?></li>
+    <!-- $player->nameのnameの部分をid,name,role,uniform,ouenなどにかえてください --> 
+ <?php endforeach; ?>
+</ul> 
+ <a href="detail.html">
 
     <section class="player cf">
       <div class="portrait">
