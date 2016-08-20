@@ -27,10 +27,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('common.css') ?>
+    <?= $this->Html->css('style.css') ?>
+   
+     
+    <?= $this->Html->script('jquery.js') ?>
+    <?= $this->Html->script('list.js') ?>
+    <?= $this->Html->script('detail.js') ?>
+    
+    
+    
+    
+
+
+
     <?= $this->fetch('meta') ?>
-<link href="http://ec2-52-198-13-146.ap-northeast-1.compute.amazonaws.com/studev-riku/webroot/css/common.css" rel="stylesheet">
-<link href="http://ec2-52-198-13-146.ap-northeast-1.compute.amazonaws.com/studev-riku/webroot/css/base.css" rel="stylesheet">
-<link href="http://ec2-52-198-13-146.ap-northeast-1.compute.amazonaws.com/studev-riku/webroot/css/style.css" rel="stylesheet">
     <?= $this->fetch('script') ?>
 </head>
 <body>
