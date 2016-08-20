@@ -29,16 +29,39 @@ h1 {
     #top #main .currentGame p {
       font-size: 30px;
       text-align: center; }
+  #top #main p.comment {
+    opacity: 0;
+    overflow-y: hidden;
+    transition: all .5s;
+    position: absolute;
+    bottom: 10px;
+    right: -14px; }
+
+@keyframes gradient {
+  0% {
+    top: 0;
+    left: 0; }
+  50% { }
+  100% {
+    top: 100px;
+    left: 100%; } }
   #top #main .player.active {
     background: #bfdeff;
+    background: linear-gradient(#b4ddfe, #0d4996);
     height: 120px; }
+    #top #main .player.active p.comment {
+      opacity: 1;
+      height: auto;
+      display: block;
+      right: 14px; }
   #top #main .player {
-    background: #fff;
+    background: linear-gradient(#ffffff, #ffffff);
     margin-bottom: 10px;
     border: 1px #b3b3b3 solid;
     border-radius: 4px;
     height: 85px;
-    position: relative; }
+    position: relative;
+    transition: height 1s,background 1s; }
     #top #main .player .portrait {
       width: 40%;
       margin-right: 3%;
@@ -125,11 +148,12 @@ h1 {
       transform: skew(-16deg);
       text-align: center;
       line-height: 40px;
-      height: 40px; }
-    #detail .tab ul.tabBtns li#doramaBtn {
+      height: 40px;
+      transition: all .5s; }
+    #detail .tab ul.tabBtns li#scoreBtn {
       margin-left: -10px;
       margin-right: 10px; }
-    #detail .tab ul.tabBtns li#scoreBtn {
+    #detail .tab ul.tabBtns li#goodsBtn {
       margin-left: 10px;
       margin-right: -10px; }
     #detail .tab ul.tabBtns li.active {
@@ -137,6 +161,14 @@ h1 {
   #detail .tab .tabContent {
     padding: 0 10px 30px;
     margin-bottom: 30px; }
+  #detail .tab .tabContent section {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .5s; }
+  #detail .tab .tabContent section.active {
+    height: auto;
+    opacity: 1; }
 
 #send #main {
   background: #e1e1e1; }
@@ -183,3 +215,4 @@ h1 {
   transform: skew(-16deg);
   border: 0;
   margin: 0 auto 30px; }
+
