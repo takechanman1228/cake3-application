@@ -40,6 +40,17 @@ class PlayersController extends AppController
         $this->set('_serialize', ['player']);
     }
 
+     public function api($id = null)
+    {
+        $player = $this->Players->get($id, [
+            'contain' => ['Details']
+        ]);
+
+        $this->set('player', $player);
+        $this->set('_serialize', ['player']);
+    }
+
+
     /**
      * Add method
      *

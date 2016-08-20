@@ -4,6 +4,8 @@
         <li><?= $this->Html->link(__('New Comment'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="comments index large-9 medium-8 columns content">
@@ -13,6 +15,7 @@
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('user_id') ?></th>
+                <th><?= $this->Paginator->sort('player_id') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -23,6 +26,7 @@
             <tr>
                 <td><?= $this->Number->format($comment->id) ?></td>
                 <td><?= $comment->has('user') ? $this->Html->link($comment->user->name, ['controller' => 'Users', 'action' => 'view', $comment->user->id]) : '' ?></td>
+                <td><?= $comment->has('player') ? $this->Html->link($comment->player->name, ['controller' => 'Players', 'action' => 'view', $comment->player->id]) : '' ?></td>
                 <td><?= h($comment->created) ?></td>
                 <td><?= h($comment->modified) ?></td>
                 <td class="actions">

@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('List Comments'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="comments form large-9 medium-8 columns content">
@@ -18,6 +20,7 @@
         <legend><?= __('Edit Comment') ?></legend>
         <?php
             echo $this->Form->input('user_id', ['options' => $users, 'empty' => true]);
+            echo $this->Form->input('player_id', ['options' => $players, 'empty' => true]);
             echo $this->Form->input('comment');
         ?>
     </fieldset>

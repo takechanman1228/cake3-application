@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  *
+ * @property \App\Model\Entity\Comment[] $comments
  * @property \App\Model\Entity\Detail[] $details
  */
 class Player extends Entity

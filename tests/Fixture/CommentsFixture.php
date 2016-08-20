@@ -44,8 +44,8 @@ class CommentsFixture extends TestFixture
             'user_id' => 1,
             'player_id' => 1,
             'comment' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-            'created' => '2016-08-20 17:31:13',
-            'modified' => '2016-08-20 17:31:13'
+            'created' => '2016-08-20 20:29:09',
+            'modified' => '2016-08-20 20:29:09'
         ],
     ];
 }

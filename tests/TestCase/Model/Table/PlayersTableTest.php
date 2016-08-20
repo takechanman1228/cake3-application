@@ -25,6 +25,8 @@ class PlayersTableTest extends TestCase
      */
     public $fixtures = [
         'app.players',
+        'app.comments',
+        'app.users',
         'app.details'
     ];
 
