@@ -49,7 +49,7 @@ class CommentsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id=null)
     {
         $comment = $this->Comments->newEntity();
         if ($this->request->is('post')) {
@@ -57,7 +57,7 @@ class CommentsController extends AppController
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['Controller' => 'Players', 'action' => 'index']);
             } else {
                 $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             }
@@ -65,6 +65,16 @@ class CommentsController extends AppController
         $users = $this->Comments->Users->find('list', ['limit' => 200]);
         $this->set(compact('comment', 'users'));
         $this->set('_serialize', ['comment']);
+        if ($id != null) {
+        $player = $this->Players->get($id, [
+          'contain' => ['Details']
+        ]);
+        $this->set('player', $player);
+        $this->set('id', $id);
+        $this->set('_serialize', ['player']);
+        }
+
+
     }
 
     /**
