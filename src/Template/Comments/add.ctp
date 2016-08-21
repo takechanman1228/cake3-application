@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/common.css">
 
 <style type="text/css">
 .message {
@@ -20,12 +11,11 @@
   display: none;
 }
 </style>
-</head>
 <body id="send">
 
   <header id="header">
     <div class="left">
-    <a href="detail.html">戻る</a>
+    <a href="<?= $this->Url->build('/',true) ?>detail/<?= $player->id ?>">戻</a>
     </div>
     <h2>メッセージ送信</h2>
   </header>

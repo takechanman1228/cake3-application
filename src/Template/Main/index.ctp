@@ -18,7 +18,11 @@
           <div class="role"><p><?= h($player->role); ?></p></div>
           <p class="comment"></p>
         </div>
-        <div class="cheer like"><?= h($player->ouen); ?></div>
+        <div class="cheer like">
+          <img src="<?= echo $this->Html->image('cheer.svg', ['alt' => 'CakePHP']); ?>" alt="" />
+          <span><?= h($player->ouen); ?></span>
+
+        </div>
       </section>
     </a>
   <?php endforeach; ?>

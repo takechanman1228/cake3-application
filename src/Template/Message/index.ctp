@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/common.css">
-</head>
 <body id="send">
 
   <header id="header">
     <div class="left">
-    <a href="detail.html">戻る</a>
+      <a href="/detail/3">戻</a>
     </div>
     <h2>メッセージ送信</h2>
   </header>
@@ -24,7 +14,7 @@
       <div class="sendInfoBox cf">
         <div class="portrait"></div>
         <div class="info">
-          <h2><span class="name">選手名</span>を<br>応援する！</h2>
+          <h2><span class="name"><?= h($player->name) ?></span>を<br>応援する！</h2>
           <p>
             君の応援をビジョンで<br>
             届けちゃおう
@@ -50,4 +40,4 @@
   </main>
 
 </body>
-</html>
+

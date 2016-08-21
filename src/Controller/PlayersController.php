@@ -18,6 +18,9 @@ class PlayersController extends AppController
      */
     public function index()
     {
+	if(in_array($this->action, array('mobile'))) {
+        Configure::write('debug', 0);
+    }
         $players = $this->paginate($this->Players);
         $this->set('players', $this->Players->find('all'));
         $this->set('_serialize', ['players']);
