@@ -25,7 +25,7 @@
     <section class="sendInfo">
 
       <div class="sendInfoBox cf">
-        <div class="portrait"></div>
+        <div class="portrait" style="background-image:url(<?= $this->Url->build('/') ?>img/player/<?php echo $player_id; ?>/1.png)"></div>
         <div class="info">
           <h2><span class="name">選手</span>を<br>応援する！</h2>
           <p> 
