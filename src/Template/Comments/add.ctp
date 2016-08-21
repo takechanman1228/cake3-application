@@ -52,7 +52,9 @@
         <div style="display:none;"><input type="hidden" name="player_id" value=$player_id/></div>
         <div class="input textarea">
         <textarea name="comment" id="comment" rows="5"></textarea></div>
+        <div style="text-align:center;">
         <button type="submit" class="sendBtn" name="name">提出</button>
+        </div>
       </form>
     </section><!--sendInfo-->
   </main>
