@@ -15,7 +15,7 @@
 
   <header id="header">
     <div class="left">
-    <a href="<?= $this->Url->build('/',true) ?>detail/<?= $player->id ?>">戻る</a>
+    <a href="<?= $this->Url->build('/',true) ?>detail/<?= $player_id ?>">戻る</a>
     </div>
     <h2>メッセージ送信</h2>
   </header>
