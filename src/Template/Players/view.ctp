@@ -4,7 +4,7 @@
 
   <header id="header">
     <div class="left">
-    <a href="index.html">戻る</a>
+    <a href="<?= $this->Url->build('/',true) ?>">戻る</a>
     </div>
     <h2><?= h($player->name) ?></h2>
   </header>
@@ -19,9 +19,10 @@
         高校：横浜高校<br>
         似てる有名人： 今野浩喜
       </p>
-      <a class="sendBtn" href="message/<?= h($player->id) ?>">
-        応援する
-      </a>
+        <a class="sendBtn" href="<?= $this->Url->build('/',true) ?>message/<?= h($player->id) ?>">
+          応援する
+        </a>
+
     </section>
 
     <section class="tab">
@@ -72,14 +73,19 @@
 また、未来の「筒香嘉智」を目指すキッズたちにむけて、オトナサイズ・キッズサイズの2パターンをラインアップ!!
 
 スタジアムでの観戦に、タウンユースにと、さまざまなシーンで使いたくなる逸品です!
+<div class="" style="text-align:center; margin-top:30px;">
 
+            <a class="buyBtn" href="https://ec.baystars.co.jp/products/detail.php?product_id=9971531" target="_blank">
+              購入する！
+            </a>
+</div>
 
         </section>
       </div>
     </section>
 
     <section class="mainInfo">
-      <a class="sendBtn" href="message/<?= h($player->id) ?>">
+      <a class="sendBtn" href="<?= $this->Url->build('/',true) ?>message/<?= h($player->id) ?>">
         応援する
       </a>
     </section>
