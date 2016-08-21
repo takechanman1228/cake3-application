@@ -52,7 +52,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     #$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->connect('/', ['controller' => 'Players', 'action' => 'index', 'home']);
     $routes->connect('/main', ['controller' => 'Players', 'action' => 'index']);
-    $routes->connect('/api/*', ['controller' => 'Players', 'action' => 'api']);
+    $routes->connect('/api/*', ['controller' => 'Comments', 'action' => 'api']);
     $routes->connect('/detail/*', ['controller' => 'Players', 'action' => 'view']);
     $routes->connect('/messages', ['controller' => 'Comments', 'action' => 'index']);
     $routes->connect('/message/*', ['controller' => 'Comments', 'action' => 'add']);
