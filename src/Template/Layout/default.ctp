@@ -22,16 +22,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
+	D班：スターストーリー    
+</title>
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('common.css') ?>
     <?= $this->Html->css('style.css') ?>
-   
-     
+   <link rel="icon" sizes="192x192" href="http://ec2-52-198-13-146.ap-northeast-1.compute.amazonaws.com/studev-riku/webroot/img/icon.png">
+    <link rel="apple-touch-icon" href="http://ec2-52-198-13-146.ap-northeast-1.compute.amazonaws.com/studev-riku/webroot/img/icon.png" /> 
     <?= $this->Html->script('jquery.js') ?>
     <?= $this->Html->script('list.js') ?>
     <?= $this->Html->script('detail.js') ?>
